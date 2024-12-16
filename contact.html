@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    }
+
+    .intro-text {
+      text-align: center;
+      color: #00d4ff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-top: 20px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    }
+
+    /* Neon Card Styles */
+    .neon-card {
+      position: relative;
+      width: 90%;
+      max-width: 700px;
+      background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      box-shadow: 
+        0 0 10px rgba(0, 255, 255, 0.5),
+        0 0 20px rgba(0, 255, 255, 0.8),
+        0 0 40px rgba(255, 0, 255, 0.5),
+        0 0 80px rgba(255, 0, 255, 0.7);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .neon-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.7),
+        0 0 50px rgba(0, 255, 255, 0.9),
+        0 0 90px rgba(255, 0, 255, 0.8),
+        0 0 130px rgba(255, 0, 255, 1);
+    }
+
+    .neon-card h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      background: -webkit-linear-gradient(45deg, #00d4ff, #ff00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .neon-card .hospital {
+      margin-bottom: 20px;
+      text-align: left;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+
+    .neon-card .hospital h3 {
+      margin: 0 0 5px;
+      font-size: 1.5rem;
+      color: #00d4ff;
+    }
+
+    .neon-card .hospital p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .neon-card .hospital a {
+      color: #00d4ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Contact Section */
+    .contact-section {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .contact-section img {
+      max-width: 300px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    .contact-section p {
+      margin: 10px 0;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>India's Top Hospitals -</h1>
+  </header>
+  
+  <!-- Contact Section with Image -->
+  <div class="contact-section">
+    <img src="download (43).jpeg" alt="Hospital Icon">
+    <p>For any inquiries, please contact us:</p>
+    <p>Email: <strong>info@besthospitals.com</strong></p>
+    <p>Phone: <strong>+91 123 456 7890</strong></p>
+  </div>
+
+  <div class="intro-text">
+    <p>Welcome to India's Top Hospitals - Explore the best healthcare facilities in the country.</p>
+    Find and contact India's leading hospitals with ease. These centers provide the best medical services for your health and well-being.
+  </div>
+
+  <!-- Combined Neon Card -->
+  <div class="neon-card">
+    <h2>Leading Healthcare Facilities</h2>
+
+    <div class="hospital">
+      <h3>Apollo Hospitals</h3>
+      <p><strong>Address:</strong> 21, Greams Lane, Off Greams Road, Chennai, Tamil Nadu</p>
+      <p><strong>Phone:</strong> +91 44 2829 3333</p>
+      <p><strong>Email:</strong> <a href="mailto:contact@apollohospitals.com">contact@apollohospitals.com</a></p>
+    </div>
+
+    <div class="hospital">
+      <h3>Fortis Healthcare</h3>
+      <p><strong>Address:</strong> B-22, Sector 62, Noida, Uttar Pradesh</p>
+      <p><strong>Phone:</strong> +91 124 492 1021</p>
+      <p><strong>Email:</strong> <a href="mailto:info@fortishealthcare.com">info@fortishealthcare.com</a></p>
+    </div>
+
+    <div class="hospital">
+      <h3>AIIMS Delhi</h3>
+      <p><strong>Address:</strong> Ansari Nagar, New Delhi, Delhi 110029</p>
+      <p><strong>Phone:</strong> +91 11 2658 8500</p>
+      <p><strong>Email:</strong> <a href="mailto:contact@aiims.edu">contact@aiims.edu</a></p>
+    </div>
+
+    <div class="hospital">
+      <h3>Medanta</h3>
+      <p><strong>Address:</strong> Sector 38, Gurugram, Haryana 122001</p>
+      <p><strong>Phone:</strong> +91 124 414 1414</p>
+      <p><strong>Email:</strong> <a href="mailto:care@medanta.org">care@medanta.org</a></p>
+    </div>
+  </div>
+
+
+  <footer>
+    <p>&copy; 2024 India's Best Hospitals. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
+
+

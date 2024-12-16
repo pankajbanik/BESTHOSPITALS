@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India's Best Hospitals</title>
+  <style>
+    /* General body styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      background-color: #121212;
+    }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Hero Section with Parallax Effect */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('download (41).jpeg') no-repeat center center/cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 10px;
+      text-shadow: 0 0 25px #fff, 0 0 50px #fff;
+      animation: glow 1.5s ease-in-out infinite alternate;
+      transition: transform 0.3s ease;
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 25px #fff, 0 0 50px #fff, 0 0 75px #fff;
+      }
+      100% {
+        text-shadow: 0 0 50px #fff, 0 0 100px #fff, 0 0 150px #fff;
+      }
+    }
+
+    .hero h1:hover {
+      transform: scale(1.1);
+    }
+
+    /* About Section */
+    .about {
+      padding: 100px 20px;
+      background: #181818;
+      text-align: center;
+      animation: slideIn 1s ease-out;
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .about h2 {
+      font-size: 3rem;
+      color: #fff;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+    }
+
+    .about p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: #ccc;
+    }
+
+    .about img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      margin-top: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      animation: scaleUp 1.5s ease-in-out;
+    }
+
+    @keyframes scaleUp {
+      0% {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Line Separator */
+    .line {
+      height: 2px;
+      background: #444;
+      margin: 50px 20px;
+    }
+
+    /* Image Gallery Section */
+    .image-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 50px 20px;
+      background: #222;
+    }
+
+    .image-gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    }
+
+    /* Circle Images with Names */
+    .circle-images {
+      background: #121212;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .circle-images h2 {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    .circle-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .circle-item {
+      text-align: center;
+    }
+
+    .circle-item img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .circle-item img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    }
+
+    .circle-item p {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    /* Footer Section */
+    footer {
+      background: #181818;
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+      font-size: 1rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .about h2 {
+        font-size: 2.5rem;
+      }
+
+      .about p {
+        font-size: 1rem;
+      }
+      p{color: hsl(0, 6%, 69%);
+        padding: 100px 20px;
+      text-align: center;
+      animation: slideIn 1s ease-out;
+
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section with Parallax Effect -->
+  <div class="hero">
+    <h1>India's Best Hospitals</h1>
+  </div>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About India's Hospitals</h2>
+    <p>
+      India is home to some of the world's most advanced and trusted healthcare institutions. From state-of-the-art facilities to expert medical professionals, these hospitals offer a range of services, including specialized treatments, cutting-edge technology, and compassionate care.
+    </p>
+    <img src="Gallery of Pondok Indah Bintaro Jaya Hospital _ Silver Thomas Hanley  - 20.jpeg" alt="Modern Hospital">
+    <p>This image illustrates a modern hospital's architectural design, symbolizing the advanced facilities offered at top hospitals in India.</p>
+  </section>
+
+  <!-- Line separator -->
+  <div class="line"></div>
+
+  <!-- Image Gallery Section -->
+  <section class="image-gallery">
+    <img src="https://images.unsplash.com/photo-1584515933487-779824d29309" alt="Hospital Facility">
+    <img src="download (38).jpeg" alt="Modern Medical Equipment">
+    <img src="download (39).jpeg" alt="Advanced Operating Room">
+    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528" alt="Patient Care Room">
+  </section>
+
+  <!-- Descriptive text for the image gallery -->
+  <p>The images above showcase various modern hospital facilities, highlighting the advanced infrastructure and state-of-the-art medical equipment available in top hospitals across India.</p>
+
+  <!-- Line separator -->
+  <div class="line"></div>
+
+  <!-- Circle Images with Names -->
+  <section class="circle-images">
+    <h2>Top Hospitals in India</h2>
+    <div class="circle-container">
+      <div class="circle-item">
+        <img src="Apollo Hospital Chennai Doctor List with Phone - Find Doctor 24.jpeg" alt="Apollo Hospitals">
+        <p>Apollo Hospitals</p>
+      </div>
+      <div class="circle-item">
+        <img src="Heart Hospital in Mumbai _ Fortis Healthcare.jpeg" alt="Fortis Healthcare">
+        <p>Fortis Healthcare</p>
+      </div>
+      <div class="circle-item">
+        <img src="AIIMS counseling 2019_ Last date extended.jpeg" alt="AIIMS Delhi">
+        <p>AIIMS Delhi</p>
+      </div>
+      <div class="circle-item">
+        <img src="Best Hospital in Gurgaon - Medanta Hospital Gurgaon.jpeg" alt="Medanta">
+        <p>Medanta</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Descriptive lines for circle images -->
+  <p>These are some of the most renowned hospitals in India, including Apollo Hospitals, Fortis Healthcare, AIIMS Delhi, and Medanta. Each hospital is known for its exceptional care and cutting-edge technology.</p>
+
+  <!-- Line separator -->
+  <div class="line"></div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 India's Best Hospitals. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

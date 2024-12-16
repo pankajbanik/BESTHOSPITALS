@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wel-Come</title>
+  <style>
+    /* General Body Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Video Background */
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Navbar Styling */
+    nav {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: left 0.3s ease-in-out;
+      z-index: 1000;
+    }
+
+    nav.show {
+      left: 0;
+    }
+
+    nav .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 20px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      text-shadow: 0 0 25px #fff, 0 0 50px #fff, 0 0 75px #fff;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 25px #fff, 0 0 50px #fff, 0 0 75px #fff;
+      }
+      100% {
+        text-shadow: 0 0 50px #fff, 0 0 100px #fff, 0 0 150px #fff;
+      }
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 15px 0;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 12px 20px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      box-shadow: 0 0 20px #fff;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 25px;
+      z-index: 1100;
+    }
+
+    .hamburger div {
+      background-color: #fff;
+      height: 4px;
+      width: 100%;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    /* Search Bar */
+    .search-container {
+      margin-top: 20px;
+      width: 80%;
+    }
+
+    .search-bar {
+      height: 40px;
+      width: 100%;
+      border: none;
+      border-radius: 20px;
+      padding: 0 15px;
+      font-size: 1rem;
+      outline: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      box-shadow: 0 0 10px #fff;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .search-bar:focus {
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 20px #fff;
+    }
+
+    /* Particle Effect */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: transparent;
+      z-index: -1;
+    }
+
+    @keyframes particle {
+      0% {
+        transform: translateY(0) translateX(0) scale(0.5);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(50px) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .particle {
+      position: absolute;
+      bottom: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fff;
+      animation: particle 4s infinite ease-in-out;
+      box-shadow: 0 0 20px #fff;
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      nav ul li a {
+        font-size: 1rem;
+      }
+
+      .search-bar {
+        height: 35px;
+        font-size: 0.9rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Video Background -->
+  <video class="video-background" autoplay muted loop>
+    <source src="5c13e883056b1ee5fd158d2a16d4da95.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Hamburger Menu -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="logo">Pankaj-004</div>
+    <ul>
+      <li><a href="hospital.html">India's Finest Hospital
+      </a></li>
+      <li><a href="handshake.html">Appointment</a></li>
+      <li><a href="service.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" class="search-bar" placeholder="Search...">
+    </div>
+  </nav>
+
+  <div class="particles">
+    <div class="particle" style="left: 10%;"></div>
+    <div class="particle" style="left: 40%;"></div>
+    <div class="particle" style="left: 70%;"></div>
+  </div>
+
+  <script>
+    // Function to toggle the navbar visibility
+    function toggleMenu() {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('show');
+    }
+
+    // Add dynamic particle effects
+    const particles = document.querySelector('.particles');
+    for (let i = 0; i < 50; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.animationDelay = `${Math.random() * 4}s`;
+      particle.style.animationDuration = `${4 + Math.random() * 3}s`;
+      particles.appendChild(particle);
+    }
+  </script>
+
+</body>
+</html>

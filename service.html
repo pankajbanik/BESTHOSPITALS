@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Services</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #121212;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+      color: #00e5ff;
+    }
+
+    /* Dashboard Grid */
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    .service-widget {
+      background: linear-gradient(135deg, #222, #333);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-widget:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 255, 255, 0.7);
+    }
+
+    .service-widget h2 {
+      color: #00e5ff;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .service-widget p {
+      color: #ccc;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Circular Indicators */
+    .circle-indicator {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 20px auto;
+      background: conic-gradient(#00e5ff 87%, #444 0%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circle-indicator span {
+      position: absolute;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    footer {
+      margin: 30px 0;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hospital Services</h1>
+  </header>
+
+  <!-- Dashboard Section -->
+  <section class="dashboard">
+
+    <!-- Emergency Services -->
+    <div class="service-widget">
+      <div class="circle-indicator">
+        <span>87%</span>
+      </div>
+      <h2>Emergency Services</h2>
+      <p>24/7 emergency care with modern facilities and quick response.</p>
+    </div>
+
+    <!-- Outpatient Services -->
+    <div class="service-widget">
+      <div class="circle-indicator" style="background: conic-gradient(#00e5ff 70%, #444 0%);">
+        <span>70%</span>
+      </div>
+      <h2>Outpatient Services</h2>
+      <p>Diagnostic consultations without the need for admission.</p>
+    </div>
+
+    <!-- Surgical Services -->
+    <div class="service-widget">
+      <div class="circle-indicator" style="background: conic-gradient(#00e5ff 60%, #444 0%);">
+        <span>60%</span>
+      </div>
+      <h2>Surgical Procedures</h2>
+      <p>State-of-the-art operating rooms for advanced surgeries.</p>
+    </div>
+
+    <!-- Pharmacy -->
+    <div class="service-widget">
+      <div class="circle-indicator" style="background: conic-gradient(#00e5ff 95%, #444 0%);">
+        <span>95%</span>
+      </div>
+      <h2>Pharmacy</h2>
+      <p>24-hour pharmacy for medicines and essentials.</p>
+    </div>
+
+    <!-- Radiology & Imaging -->
+    <div class="service-widget">
+      <div class="circle-indicator" style="background: conic-gradient(#00e5ff 80%, #444 0%);">
+        <span>80%</span>
+      </div>
+      <h2>Radiology & Imaging</h2>
+      <p>Advanced MRI, CT scans, and ultrasound facilities.</p>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Best Hospital Services.</p>
+  </footer>
+
+</body>
+</html>

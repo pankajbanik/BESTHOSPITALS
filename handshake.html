@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Appointment Booking</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #121212;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .appointment-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: scaleUp 0.5s ease-in-out;
+    }
+
+    .appointment-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .appointment-card img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .appointment-card img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .appointment-details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .appointment-details h2 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+      color: #333;
+      transition: transform 0.3s ease;
+    }
+
+    .appointment-details h2:hover {
+      transform: scale(1.05);
+    }
+
+    .appointment-details p {
+      margin: 5px 0;
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .appointment-details .fees {
+      font-weight: bold;
+      color: #111;
+    }
+
+    .appointment-details button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s ease;
+    }
+
+    .appointment-details button:hover {
+      background-color: #0056b3;
+      transform: scale(1.1);
+    }
+
+    .info-section {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .info-section p {
+      font-size: 1.2rem;
+      color: #444;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    .separator {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .separator hr {
+      border: 0;
+      height: 1px;
+      background-color: #ddd;
+      margin: 20px auto;
+      width: 80%;
+    }
+
+    .separator p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    footer {
+      background-color: #121212;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    footer:hover {
+      transform: scale(1.02);
+    }
+
+    @keyframes scaleUp {
+      0% {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .appointment-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .appointment-details {
+        padding-left: 0;
+      }
+    }
+  </style>
+  <script>
+    const appointments = [
+      {
+        hospital: "Apollo Hospitals",
+        doctor: "Dr. Sunita Sharma",
+        specialization: "Cardiologist",
+        availability: "Monday to Friday",
+        time: "10:00 AM - 4:00 PM",
+        fees: "₹1500",
+        image: "Apollo Hospital Chennai Doctor List with Phone - Find Doctor 24.jpeg"
+      },
+      {
+        hospital: "Fortis Healthcare",
+        doctor: "Dr. Arjun Mehta",
+        specialization: "Neurologist",
+        availability: "Wednesday to Sunday",
+        time: "11:00 AM - 5:00 PM",
+        fees: "₹1800",
+        image: "Heart Hospital in Mumbai _ Fortis Healthcare.jpeg"
+      },
+      {
+        hospital: "AIIMS Delhi",
+        doctor: "Dr. Priya Khanna",
+        specialization: "Oncologist",
+        availability: "Tuesday and Thursday",
+        time: "9:00 AM - 3:00 PM",
+        fees: "₹1200",
+        image: "AIIMS counseling 2019_ Last date extended.jpeg"
+      },
+      {
+        hospital: "Medanta",
+        doctor: "Dr. Ravi Singh",
+        specialization: "Orthopedic Surgeon",
+        availability: "Monday, Wednesday, Friday",
+        time: "12:00 PM - 6:00 PM",
+        fees: "₹2000",
+        image: "Best Hospital in Gurgaon - Medanta Hospital Gurgaon.jpeg"
+      }
+    ];
+
+    function loadAppointments() {
+      const container = document.querySelector('.container');
+      container.innerHTML = appointments.map(appointment => `
+        <div class="appointment-card">
+          <img src="${appointment.image}" alt="${appointment.hospital}">
+          <div class="appointment-details">
+            <h2>${appointment.hospital} - ${appointment.doctor}</h2>
+            <p>Specialization: ${appointment.specialization}</p>
+            <p>Available: ${appointment.availability}</p>
+            <p>Time: ${appointment.time}</p>
+            <p class="fees">Consultation Fees: ${appointment.fees}</p>
+            <button>Book Now</button>
+          </div>
+        </div>
+        <div class="separator">
+          <hr>
+          <p>${appointment.hospital} is renowned for its outstanding medical care and advanced technology, offering the best treatment options for patients.</p>
+        </div>
+      `).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', loadAppointments);
+  </script>
+</head>
+<body>
+
+<header>
+  <h1>Book an Appointment</h1>
+</header>
+
+<div class="container">
+  <!-- Appointments will be dynamically loaded here -->
+</div>
+
+<section class="info-section">
+  <p>India's top hospitals provide exceptional healthcare services. From Apollo Hospitals to AIIMS Delhi, each institution is equipped with state-of-the-art facilities and highly skilled professionals. These hospitals are dedicated to delivering the best patient care, ensuring a healthier tomorrow for everyone.</p>
+  <p>Explore the profiles below to book an appointment with renowned doctors and experience world-class medical services tailored to your needs.</p>
+</section>
+
+<footer>
+  <p>&copy; India's Best Hospitals. @pankajbanik2005@gmail.com</p>
+</footer>
+
+</body>
+</html>
